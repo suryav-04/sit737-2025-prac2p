@@ -1,25 +1,25 @@
 const express = require('express');  
 const app = express();  
-const port = 3000;  
+const PORT = 3000;  
 
-// Define your details
-const studentInfo = {
-    name: "Surya Vignesh Kubendran",   
-    course: "SIT737 - Cloud Native Application Development",  
-    studentID: "224189737" 
+// Student Information (Modify These)
+const studentDetails = {
+    fullName: "Surya Vignesh Kubendran",  
+    courseTitle: "SIT737 - Cloud Native Development",  
+    studentID: "224189737"
 };
 
-// Define the homepage route
+// Homepage Route - Display Student Info
 app.get('/', (req, res) => {  
     res.send(`
-        <h1>Welcome to My Node.js Web Server</h1>
-        <p><strong>Name:</strong> ${studentInfo.name}</p>
-        <p><strong>Course:</strong> ${studentInfo.course}</p>
-        <p><strong>Student ID:</strong> ${studentInfo.studentID}</p>
+        <h1>Welcome to My Express Server</h1>
+        <p><strong>Full Name:</strong> ${studentDetails.fullName}</p>
+        <p><strong>Course:</strong> ${studentDetails.courseTitle}</p>
+        <p><strong>Student ID:</strong> ${studentDetails.studentID}</p>
     `);  
-});  
+});
 
-// Start the server
-app.listen(port, () => {  
-    console.log(`Server running at http://localhost:${port}`);  
-});  
+// Server Initialization
+app.listen(PORT, () => {  
+    console.log(`Server is live at: http://localhost:${PORT}`);  
+});
